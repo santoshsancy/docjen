@@ -1,0 +1,8 @@
+FROM centos:7
+MAINTAINER The CentOS Project <santoshsancy@gmail.com>
+
+RUN yum install tomcat
+ADD /tmp/tomcat-users.xml /usr/share/tomcat/conf
+RUN sudo systemctl restart tomcat
+
+EXPOSE 8080
